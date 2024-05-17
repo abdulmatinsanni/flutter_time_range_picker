@@ -739,7 +739,7 @@ class TimeRangePickerState extends State<TimeRangePicker>
         backgroundColor = themeData.colorScheme.primary;
         break;
       case Brightness.dark:
-        backgroundColor = themeData.backgroundColor;
+        backgroundColor = themeData.colorScheme.surface;
         break;
     }
 
