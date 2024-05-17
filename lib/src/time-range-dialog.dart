@@ -702,8 +702,8 @@ class TimeRangePickerState extends State<TimeRangePicker>
                     radius: _radius,
                     strokeWidth: widget.strokeWidth,
                     handlerRadius: widget.handlerRadius,
-                    strokeColor: widget.strokeColor ?? themeData.primaryColor,
-                    handlerColor: widget.handlerColor ?? themeData.primaryColor,
+                    strokeColor: widget.strokeColor ?? themeData.colorScheme.primary,
+                    handlerColor: widget.handlerColor ?? themeData.colorScheme.primary,
                     selectedColor:
                         widget.selectedColor ?? themeData.primaryColorLight,
                     backgroundColor:
@@ -718,7 +718,7 @@ class TimeRangePickerState extends State<TimeRangePicker>
                     ticksOffset: widget.ticksOffset,
                     labels: widget.labels ?? new List.empty(),
                     labelStyle:
-                        widget.labelStyle ?? themeData.textTheme.bodyText1,
+                        widget.labelStyle ?? themeData.textTheme.bodyMedium,
                     labelOffset: widget.labelOffset,
                     rotateLabels: widget.rotateLabels,
                     autoAdjustLabels: widget.autoAdjustLabels,
@@ -736,7 +736,7 @@ class TimeRangePickerState extends State<TimeRangePicker>
     Color backgroundColor;
     switch (themeData.brightness) {
       case Brightness.light:
-        backgroundColor = themeData.primaryColor;
+        backgroundColor = themeData.colorScheme.primary;
         break;
       case Brightness.dark:
         backgroundColor = themeData.backgroundColor;
@@ -745,7 +745,7 @@ class TimeRangePickerState extends State<TimeRangePicker>
 
     Color activeColor;
     Color inactiveColor;
-    switch (ThemeData.estimateBrightnessForColor(themeData.primaryColor)) {
+    switch (ThemeData.estimateBrightnessForColor(themeData.colorScheme.primary)) {
       case Brightness.light:
         activeColor = Colors.black87;
         inactiveColor = Colors.black54;
